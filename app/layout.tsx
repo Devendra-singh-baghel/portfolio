@@ -23,6 +23,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Devendra Singh Baghel | Backend-focused Full-Stack Developer",
   description: "Personal portfolio of Devendra Singh Baghel.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
