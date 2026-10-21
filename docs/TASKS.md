@@ -7,7 +7,7 @@ Rule: do one unchecked task at a time. Tick it only after `npm run build` and `n
 - [x] Fonts loaded with next/font (Instrument Serif, Manrope, IBM Plex Mono)
 - [x] Base components: button, link, section header, card, tag
 - [x] `noindex` robots metadata until launch
-- [ ] First deploy on Vercel
+- [x] First deploy on Vercel
 Done when: a dark placeholder page is live and tokens and fonts render correctly.
 
 ## Phase 2: Layout, hero and core sections (P0)
