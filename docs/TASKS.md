@@ -5,7 +5,7 @@ Rule: do one unchecked task at a time. Tick it only after `npm run build` and `n
 ## Phase 1: Foundation, design system, first deploy (P0)
 - [x] Design tokens from docs/DESIGN.md mapped to theme variables (dark default via next-themes)
 - [x] Fonts loaded with next/font (Instrument Serif, Manrope, IBM Plex Mono)
-- [ ] Base components: button, link, section header, card, tag
+- [x] Base components: button, link, section header, card, tag
 - [ ] `noindex` robots metadata until launch
 - [ ] First deploy on Vercel
 Done when: a dark placeholder page is live and tokens and fonts render correctly.
