@@ -12,7 +12,7 @@ Source of truth: Devendra's resume. Use this copy as written. If something is mi
 - Buttons: Explore Projects, Contact Me
 
 ## About (DRAFT, Devendra to edit)
-I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. I also build React front ends, and I am currently learning Python, FastAPI and AI agent architecture.
+I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. I also build React front ends, and I am currently learning Python, FastAPI and AI agent architecture.I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. Outside work, I build full-stack projects with React and the MERN stack, and I am currently learning Python, FastAPI and AI agent architecture.
 
 ## Case studies (written in Phase 4, only what the resume supports)
 1. AI document extraction with Google Gemini Vision for automated form processing across multiple airline partners: 90%+ field accuracy, 80% less manual form-filling time. Be ready to explain how this was measured.
