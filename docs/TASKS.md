@@ -3,7 +3,7 @@
 Rule: do one unchecked task at a time. Tick it only after `npm run build` and `npm run lint` pass and the change is committed to `main`.
 
 ## Phase 1: Foundation, design system, first deploy (P0)
-- [ ] Design tokens from docs/DESIGN.md mapped to theme variables (dark default via next-themes)
+- [x] Design tokens from docs/DESIGN.md mapped to theme variables (dark default via next-themes)
 - [ ] Fonts loaded with next/font (Instrument Serif, Manrope, IBM Plex Mono)
 - [ ] Base components: button, link, section header, card, tag
 - [ ] `noindex` robots metadata until launch
