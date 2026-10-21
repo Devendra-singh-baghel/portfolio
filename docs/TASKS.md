@@ -11,7 +11,7 @@ Rule: do one unchecked task at a time. Tick it only after `npm run build` and `n
 Done when: a dark placeholder page is live and tokens and fonts render correctly.
 
 ## Phase 2: Layout, hero and core sections (P0)
-- [ ] Navbar with active-link indicator, mobile menu, skip-to-content link
+- [x] Navbar with active-link indicator, mobile menu, skip-to-content link
 - [ ] Hero (headline, support line, buttons, social links, optional B&W photo)
 - [ ] About
 - [ ] Skills in groups

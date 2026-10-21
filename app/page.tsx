@@ -13,7 +13,10 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-center px-4 py-16 sm:px-8">
+    <main
+      id="main-content"
+      className="flex min-h-screen flex-col justify-center px-4 py-16 sm:px-8"
+    >
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-8">
         <SectionHeader
           label="00 / PLACEHOLDER"
