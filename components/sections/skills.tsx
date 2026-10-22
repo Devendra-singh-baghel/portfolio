@@ -11,7 +11,7 @@ export function Skills() {
       className="scroll-mt-24 py-16 sm:py-24 lg:py-32"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
-        <SectionHeader label="02 / SKILLS" title="Skills & Technologies" />
+        <SectionHeader label="03 / SKILLS" title="Skills & Technologies" />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {skillGroups.map((group) => (
