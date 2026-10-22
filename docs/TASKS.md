@@ -19,7 +19,7 @@ Done when: a dark placeholder page is live and tokens and fonts render correctly
 Done when: the four sections show real content on the live URL and the mobile menu works.
 
 ## Phase 3: Experience and projects (P0)
-- [ ] data/experience.ts and data/projects.ts (typed)
+- [x] data/experience.ts and data/projects.ts (typed)
 - [ ] Experience and education sections
 - [ ] Selected work cards: NexCart, StudySync, MealMate
 - [ ] Screenshots optimised with next/image
