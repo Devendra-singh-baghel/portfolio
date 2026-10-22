@@ -12,9 +12,9 @@ Done when: a dark placeholder page is live and tokens and fonts render correctly
 
 ## Phase 2: Layout, hero and core sections (P0)
 - [x] Navbar with active-link indicator, mobile menu, skip-to-content link
-- [ ] Hero (headline, support line, buttons, social links, optional B&W photo)
-- [ ] About
-- [ ] Skills in groups
+- [x] Hero (headline, support line, buttons, social links, optional B&W photo)
+- [x] About
+- [x] Skills in groups
 - [ ] Check at 360, 768, 1280 px
 Done when: the four sections show real content on the live URL and the mobile menu works.
 
