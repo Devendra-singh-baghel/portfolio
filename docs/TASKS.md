@@ -22,7 +22,7 @@ Done when: the four sections show real content on the live URL and the mobile me
 - [x] data/experience.ts and data/projects.ts (typed)
 - [x] Experience and education sections
 - [x] Selected work cards: NexCart, StudySync, MealMate
-- [ ] Screenshots optimised with next/image
+- [x] Screenshots optimised with next/image
 Done when: adding a project needs only one entry in data/projects.ts and no card has a broken link.
 
 ## Phase 4: Case studies (P0)

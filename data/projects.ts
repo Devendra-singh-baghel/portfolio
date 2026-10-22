@@ -41,7 +41,7 @@ export const projects: readonly Project[] = [
       "Admin dashboard with CRUD for products and orders, including inventory and order status tracking.",
     ],
     image: {
-      src: "/images/nexcart.png",
+      src: "/images/nexcart.webp",
       alt: "Screenshot of NexCart E-Commerce platform",
     },
     links: [
@@ -73,7 +73,7 @@ export const projects: readonly Project[] = [
       "15+ reusable React components with Redux Toolkit for global state.",
     ],
     image: {
-      src: "/images/studysync.png",
+      src: "/images/studysync.webp",
       alt: "Screenshot of StudySync Collaborative E-Learning platform",
     },
     links: [
@@ -102,7 +102,7 @@ export const projects: readonly Project[] = [
       "Responsive, mobile-first recipe discovery app with ingredient or meal-name search, localStorage favorites and category filtering.",
     ],
     image: {
-      src: "/images/mealmate.png",
+      src: "/images/mealmate.webp",
       alt: "Screenshot of MealMate Recipe Finder application",
     },
     links: [
