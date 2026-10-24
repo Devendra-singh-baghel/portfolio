@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { TextLink } from "@/components/ui/text-link";
+import { SITE_URL } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{
@@ -29,10 +30,30 @@ export async function generateMetadata({
     };
   }
 
+  const title = "AI Document Extraction";
+  const description =
+    "Case study on AI document extraction for airline forms with Google Gemini.";
+  const pageUrl = `${SITE_URL}/case-studies/${slug}`;
+
   return {
-    title: "AI Document Extraction | Devendra Singh Baghel",
-    description:
-      "Case study on AI document extraction for airline forms with Google Gemini.",
+    title,
+    description,
+    alternates: {
+      canonical: `/case-studies/${slug}`,
+    },
+    openGraph: {
+      title: `${title} | Devendra Singh Baghel`,
+      description,
+      url: pageUrl,
+      siteName: "Devendra Singh Baghel",
+      locale: "en_US",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Devendra Singh Baghel`,
+      description,
+    },
   };
 }
 
