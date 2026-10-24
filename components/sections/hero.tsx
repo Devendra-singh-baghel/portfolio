@@ -43,7 +43,7 @@ export function Hero() {
             variant="secondary"
             className="h-10 px-5 text-sm sm:h-11 sm:px-6"
           >
-            <a href="mailto:devendrabaghel0220@gmail.com">Contact Me</a>
+            <a href="#contact">Contact Me</a>
           </Button>
 
           <div className="flex items-center gap-4 pl-0 sm:pl-4">

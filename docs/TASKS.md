@@ -33,8 +33,8 @@ Done when: adding a project needs only one entry in data/projects.ts and no card
 Done when: the case study opens from the home page and has a diagram.
 
 ## Phase 5: Contact and resume (P0)
-- [ ] Contact section (id="contact", label "06 / CONTACT"): email link, GitHub, LinkedIn, Resume download (phone-free PDF already in public/; use its exact file name)
-- [ ] Footer (sirf copyright aur links, koi naya claim nahi)
+- [x] Contact section (id="contact", label "06 / CONTACT"): email link, GitHub, LinkedIn, Resume download (phone-free PDF already in public/; use its exact file name)
+- [x] Footer (copyright and links only, no new claims)
 Done when: all contact links and the resume download work on the live site.
 
 ## Phase 6: SEO, accessibility, performance, repo cleanup (P1)
