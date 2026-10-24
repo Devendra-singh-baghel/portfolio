@@ -1,0 +1,27 @@
+# Case Study: AI document extraction for airline forms
+
+## Problem
+Airline staff received pre-filled passenger forms and had to type each customer's details into the app by hand. At current traffic this was manageable, but a form has roughly 30 to 40 fields, so manual entry would become a bottleneck as volume grew.
+
+## Constraints
+- Multiple airline partners, each with a different form layout.
+- Input cost had to stay low at scale.
+- Commonly confused characters on the forms led to misread values.
+- Staff still needed to be able to trust and correct the result.
+
+## Architecture
+Generic diagram only: Upload, Preprocess, Gemini, Validate, Review.
+
+- Each form type has a schema (field names and positions) stored in the database. The form code selects which schema is injected into the prompt.
+- The prompt is split into a static part (extraction rules and guardrails) and a dynamic part (form code and that form's schema), to keep input cost low.
+- The model returns structured field values, and fields it is unsure about are flagged as low confidence.
+
+## Decisions and trade-offs
+1. Model: Gemini Flash-Lite. Claude and OpenAI models were accurate too, but costlier, and cost efficiency was the requirement. A self-hosted model would have added hardware cost, which was overkill for this workload.
+2. Schema per form, injected dynamically. Alternative A: send every form's schema in every prompt (less accurate, more input tokens). Alternative B: cache all schemas as static content (added caching cost). Injecting only the matching schema by form code was the better balance.
+3. Prompt guardrails for confusable characters, added after reviewing which fields the model misread.
+4. Low-confidence flagging, from two sources: the model's own uncertainty and a list of fields where it was consistently wrong. Staff verify only the flagged fields instead of the whole form.
+
+## Result
+- 90%+ field accuracy for every airline partner, measured per field on sample forms from each airline. Method: AI-assisted comparison of extracted data against the original form, followed by manual verification.
+- Approx. 80% reduction in manual form-filling time (team estimate). Typically 1 to 3 flagged fields to check instead of 30 to 40 to enter.
