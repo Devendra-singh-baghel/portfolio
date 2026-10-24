@@ -41,7 +41,8 @@ Done when: all contact links and the resume download work on the live site.
 - [x] Metadata, Open Graph image, favicon, canonical, sitemap
 - [x] Keyboard navigation, focus, contrast, alt text
 - [ ] Images optimised, lazy loading, Lighthouse check
-- [ ] 404 page
+- [x] 404 page
+- [x] README for the repo
 Done when: no major Lighthouse red flags and keyboard-only navigation works.
 
 ## Phase 7: Launch (P0)
