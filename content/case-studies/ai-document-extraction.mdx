@@ -10,7 +10,8 @@ Airline staff received pre-filled passenger forms and had to type each customer'
 - Staff still needed to be able to trust and correct the result.
 
 ## Architecture
-Generic diagram only: Upload, Preprocess, Gemini, Validate, Review.
+
+<ArchitectureDiagram />
 
 - Each form type has a schema (field names and positions) stored in the database. The form code selects which schema is injected into the prompt.
 - The prompt is split into a static part (extraction rules and guardrails) and a dynamic part (form code and that form's schema), to keep input cost low.

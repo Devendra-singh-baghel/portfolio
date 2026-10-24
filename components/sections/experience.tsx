@@ -11,7 +11,7 @@ export function Experience() {
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          label="04 / EXPERIENCE"
+          label="05 / EXPERIENCE"
           title="Experience & Education"
         />
 

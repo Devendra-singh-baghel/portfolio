@@ -1,7 +1,9 @@
 import type { MDXComponents } from "mdx/types";
+import { ArchitectureDiagram } from "@/components/architecture-diagram";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    ArchitectureDiagram,
     h1: ({ className, ...props }) => (
       <h1
         className={`font-serif text-3xl font-normal leading-tight tracking-tight text-foreground sm:text-4xl ${className || ""}`}

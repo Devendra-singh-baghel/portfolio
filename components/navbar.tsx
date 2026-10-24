@@ -2,22 +2,30 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState<string>("");
 
   React.useEffect(() => {
+    if (!isHome) {
+      return;
+    }
+
     const sectionIds = ["work", "about", "skills", "experience", "contact"];
 
     const handleScroll = () => {
@@ -42,7 +50,7 @@ export function Navbar() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   return (
     <>
@@ -57,8 +65,8 @@ export function Navbar() {
       <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
-            href="#"
-            className="font-mono text-sm font-medium tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+            href="/"
+            className="rounded-sm font-mono text-sm font-medium tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Devendra Singh Baghel
           </Link>
@@ -69,13 +77,14 @@ export function Navbar() {
             className="hidden items-center gap-6 md:flex"
           >
             {NAV_LINKS.map((link) => {
-              const isActive = activeSection === link.href.replace("#", "");
+              const sectionId = link.href.replace("/#", "");
+              const isActive = isHome && activeSection === sectionId;
               return (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "group flex items-center gap-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm py-1 px-1.5",
+                    "group flex items-center gap-1.5 rounded-sm px-1.5 py-1 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                     isActive
                       ? "font-medium text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -88,7 +97,7 @@ export function Navbar() {
                     />
                   )}
                   {link.label}
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -113,14 +122,15 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-2">
               {NAV_LINKS.map((link) => {
-                const isActive = activeSection === link.href.replace("#", "");
+                const sectionId = link.href.replace("/#", "");
+                const isActive = isHome && activeSection === sectionId;
                 return (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "flex items-center justify-between rounded-md px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                      "flex items-center justify-between rounded-md px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                       isActive
                         ? "bg-muted font-medium text-foreground"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -133,7 +143,7 @@ export function Navbar() {
                         className="size-1.5 rounded-full bg-primary"
                       />
                     )}
-                  </a>
+                  </Link>
                 );
               })}
             </div>

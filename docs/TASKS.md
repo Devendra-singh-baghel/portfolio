@@ -26,10 +26,10 @@ Done when: the four sections show real content on the live URL and the mobile me
 Done when: adding a project needs only one entry in data/projects.ts and no card has a broken link.
 
 ## Phase 4: Case study (P0)
-- [ ] MDX setup and /case-studies/[slug] route, link from the home page
-- [ ] Case study layout: Problem, Constraints, Architecture (diagram), Decisions and trade-offs, Result
-- [ ] Case study: AI document extraction (from docs/CASE-STUDIES.md, no additions)
-- [ ] Review: no partner names or internal details
+- [x] MDX setup and /case-studies/[slug] route, link from the home page
+- [x] Case study layout: Problem, Constraints, Architecture (diagram), Decisions and trade-offs, Result
+- [x] Case study: AI document extraction (from docs/CASE-STUDIES.md, no additions)
+- [x] Review: no partner names or internal details
 Done when: the case study opens from the home page and has a diagram.
 
 ## Phase 5: Animations, motion toggle, contact form (P1)
