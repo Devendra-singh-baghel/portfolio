@@ -38,7 +38,7 @@ Done when: the case study opens from the home page and has a diagram.
 Done when: all contact links and the resume download work on the live site.
 
 ## Phase 6: SEO, accessibility, performance, repo cleanup (P1)
-- [ ] Metadata, Open Graph image, favicon, canonical, sitemap
+- [x] Metadata, Open Graph image, favicon, canonical, sitemap
 - [ ] Keyboard navigation, focus, contrast, alt text
 - [ ] Images optimised, lazy loading, Lighthouse check
 - [ ] 404 page

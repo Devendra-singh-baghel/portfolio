@@ -48,11 +48,20 @@ export async function generateMetadata({
       siteName: "Devendra Singh Baghel",
       locale: "en_US",
       type: "article",
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: "Devendra Singh Baghel - Backend-focused Full-Stack Developer",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | Devendra Singh Baghel`,
       description,
+      images: ["/opengraph-image"],
     },
   };
 }
