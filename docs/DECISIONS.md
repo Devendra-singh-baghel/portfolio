@@ -15,3 +15,6 @@ Append-only. Format: Decision. Why. Rejected.
 - Featured projects: NexCart, StudySync, MealMate. Cineflix skipped for now.
 - Skills list follows the resume; Docker, Redis, BullMQ left out until he is comfortable with them.
 - Public contact: resume email only, never the phone number.
+
+- MDX setup using @next/mdx and @types/mdx. Why: official Next.js integration with Turbopack for static MDX compilation without external runtime bundlers. Rejected: contentlayer (abandoned), next-mdx-remote (overkill for static local files).
+- Architecture diagram as pure React/Tailwind component. Why: zero extra dependencies, native theme token support, and accessible semantic HTML. Rejected: Mermaid/flowchart libraries.
