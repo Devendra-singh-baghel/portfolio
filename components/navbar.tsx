@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -74,7 +75,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav
             aria-label="Main Navigation"
-            className="hidden items-center gap-6 md:flex"
+            className="hidden items-center gap-3 md:flex lg:gap-5"
           >
             {NAV_LINKS.map((link) => {
               const sectionId = link.href.replace("/#", "");
@@ -100,6 +101,14 @@ export function Navbar() {
                 </Link>
               );
             })}
+            <Button asChild variant="secondary" size="sm" className="ml-1">
+              <a
+                href="/Devendra-Singh-Baghel-Resume.pdf"
+                download="Devendra-Singh-Baghel-Resume.pdf"
+              >
+                Resume
+              </a>
+            </Button>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -146,6 +155,17 @@ export function Navbar() {
                   </Link>
                 );
               })}
+              <div className="pt-2">
+                <Button asChild variant="secondary" size="sm" className="w-full">
+                  <a
+                    href="/Devendra-Singh-Baghel-Resume.pdf"
+                    download="Devendra-Singh-Baghel-Resume.pdf"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Resume
+                  </a>
+                </Button>
+              </div>
             </div>
           </nav>
         )}
