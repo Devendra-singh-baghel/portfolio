@@ -39,7 +39,7 @@ Done when: all contact links and the resume download work on the live site.
 
 ## Phase 6: SEO, accessibility, performance, repo cleanup (P1)
 - [x] Metadata, Open Graph image, favicon, canonical, sitemap
-- [ ] Keyboard navigation, focus, contrast, alt text
+- [x] Keyboard navigation, focus, contrast, alt text
 - [ ] Images optimised, lazy loading, Lighthouse check
 - [ ] 404 page
 Done when: no major Lighthouse red flags and keyboard-only navigation works.
