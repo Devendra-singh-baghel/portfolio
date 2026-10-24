@@ -17,5 +17,7 @@ Append-only. Format: Decision. Why. Rejected.
 - Public contact: resume email only, never the phone number.
 
 - MDX setup using @next/mdx and @types/mdx. Why: official Next.js integration with Turbopack for static MDX compilation without external runtime bundlers. Rejected: contentlayer (abandoned), next-mdx-remote (overkill for static local files).
-- @mdx-js/loader aur @mdx-js/react @next/mdx ke required peers hain. Why: @next/mdx internal loader depends on @mdx-js/loader to process .mdx files.
+- @mdx-js/loader and @mdx-js/react are required peers of @next/mdx. Why: @next/mdx internal loader depends on @mdx-js/loader to process .mdx files.
 - Architecture diagram as pure React/Tailwind component. Why: zero extra dependencies, native theme token support, and accessible semantic HTML. Rejected: Mermaid/flowchart libraries.
+
+- Contact form postponed, mailto only for now. Why: simpler launch, direct communication, and zero email service/API route dependencies. Rejected: contact form with route handler.

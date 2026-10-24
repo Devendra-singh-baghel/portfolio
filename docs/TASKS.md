@@ -32,13 +32,10 @@ Done when: adding a project needs only one entry in data/projects.ts and no card
 - [x] Review: no partner names or internal details
 Done when: the case study opens from the home page and has a diagram.
 
-## Phase 5: Animations, motion toggle, contact form (P1)
-- [ ] Hero entrance, scroll reveals, card hover and focus states
-- [ ] Navbar active link and mobile menu animation
-- [ ] "Motion off" toggle + prefers-reduced-motion
-- [ ] Contact section with email link, GitHub, LinkedIn, resume download
-- [ ] Contact form via route handler + email service with spam protection; keys in .env only
-Done when: the site reads fully with motion off and a test message reaches the inbox.
+## Phase 5: Contact and resume (P0)
+- [ ] Contact section (id="contact", label "06 / CONTACT"): email link, GitHub, LinkedIn, Resume download (phone-free PDF already in public/; use its exact file name)
+- [ ] Footer (sirf copyright aur links, koi naya claim nahi)
+Done when: all contact links and the resume download work on the live site.
 
 ## Phase 6: SEO, accessibility, performance, repo cleanup (P1)
 - [ ] Metadata, Open Graph image, favicon, canonical, sitemap
@@ -52,3 +49,9 @@ Done when: no major Lighthouse red flags and keyboard-only navigation works.
 - [ ] Re-check Dropty content for confidentiality
 - [ ] Remove `noindex`, check sitemap
 Done when: all links and contact actions are tested.
+
+## Phase 8: Motion and animations (P1, after launch)
+- [ ] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
+- [ ] Hero entrance, scroll reveals, card hover and focus states, navbar transitions
+- [ ] "Motion off" toggle + prefers-reduced-motion
+Done when: the site reads fully with motion off.
