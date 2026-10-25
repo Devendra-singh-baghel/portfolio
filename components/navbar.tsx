@@ -75,6 +75,15 @@ export function Navbar() {
     ];
 
     const handleScroll = () => {
+      // If at the bottom of the page, activate the last section ("contact")
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4
+      ) {
+        setActiveSection("contact");
+        return;
+      }
+
       const scrollPosition = window.scrollY + 140;
       for (const id of sectionIds) {
         const el = document.getElementById(id);

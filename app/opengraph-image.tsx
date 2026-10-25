@@ -31,7 +31,6 @@ export default async function Image() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: "20px",
           }}
         >
           <div
@@ -70,23 +69,11 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: "40px",
-              fontWeight: 400,
-              color: "#A09D96",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Full-Stack Developer
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              width: "80px",
-              height: "4px",
-              borderRadius: "2px",
+              width: "120px",
+              height: "6px",
+              borderRadius: "3px",
               backgroundColor: "#C9F56A",
-              marginTop: "12px",
+              marginTop: "36px",
             }}
           />
         </div>
