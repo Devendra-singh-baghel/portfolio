@@ -7,9 +7,10 @@ Source of truth: Devendra's resume. Use this copy as written. If something is mi
 - Positioning: Full-Stack Developer
 
 ## Hero
-- Headline: I build reliable APIs and practical web applications.
-- Support: Working with Node.js, Express.js, PostgreSQL and React to turn requirements into working software.
-- Buttons: Explore Projects, Contact Me
+- Eyebrow: FULL-STACK DEVELOPER
+- Name display: Devendra Singh (full name "Devendra Singh Baghel" in accessibility tree)
+- Headline / Subtitle: I build reliable APIs and practical web applications.
+- CTAs: Explore Projects (#projects), Download Resume (/Devendra-Singh-Baghel-Resume.pdf)
 
 ## About (DRAFT, Devendra to edit)
 I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. Outside work, I build full-stack projects with React and the MERN stack, and I am currently learning Next.js and TypeScript.
