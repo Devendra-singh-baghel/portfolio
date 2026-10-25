@@ -54,6 +54,12 @@ Done when: no major Lighthouse red flags and keyboard-only navigation works.
 - [x] Contact email button: text "Send an email", address shown as plain text next to it
 Done when: link previews look clean and the navbar behaves correctly.
 
+## Phase 7: Launch (P0)
+- [ ] Final review of links, typos, mobile
+- [ ] Re-check Dropty content for confidentiality
+- [x] Remove `noindex`, check sitemap
+Done when: all links and contact actions are tested.
+
 ## Phase 7b: Polish (after launch)
 - [ ] Hero: bigger photo, smaller headline, remove the tech-list sentence, two buttons (Explore Projects, Download Resume), GitHub and LinkedIn only in Contact and Footer
 - [ ] Project cards smaller (3 columns on large screens)

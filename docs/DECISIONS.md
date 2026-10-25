@@ -21,3 +21,4 @@ Append-only. Format: Decision. Why. Rejected.
 - Architecture diagram as pure React/Tailwind component. Why: zero extra dependencies, native theme token support, and accessible semantic HTML. Rejected: Mermaid/flowchart libraries.
 
 - Contact form postponed, mailto only for now. Why: simpler launch, direct communication, and zero email service/API route dependencies. Rejected: contact form with route handler.
+- noindex removed at launch; robots.ts allows all crawlers and points to the sitemap.
