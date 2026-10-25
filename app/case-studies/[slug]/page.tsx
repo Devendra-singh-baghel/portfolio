@@ -53,7 +53,7 @@ export async function generateMetadata({
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "Devendra Singh Baghel - Backend-focused Full-Stack Developer",
+          alt: "Devendra Singh Baghel - Full-Stack Developer",
         },
       ],
     },
