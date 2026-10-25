@@ -55,8 +55,8 @@ Done when: no major Lighthouse red flags and keyboard-only navigation works.
 Done when: link previews look clean and the navbar behaves correctly.
 
 ## Phase 7: Launch (P0)
-- [ ] Final review of links, typos, mobile
-- [ ] Re-check Dropty content for confidentiality
+- [x] Final review of links, typos, mobile
+- [x] Re-check Dropty content for confidentiality
 - [x] Remove `noindex`, check sitemap
 Done when: all links and contact actions are tested.
 

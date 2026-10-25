@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     description:
       "Full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
   },
+  verification: {
+    google: "Rj2pc42WCjk8ILQ9HMmSvIgwM3yDFi7pHHSuGc4CZcs",
+  },
 };
 
 export default function RootLayout({
