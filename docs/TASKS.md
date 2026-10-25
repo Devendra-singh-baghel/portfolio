@@ -51,7 +51,7 @@ Done when: no major Lighthouse red flags and keyboard-only navigation works.
 - [x] OG image redesign: crop-safe for square thumbnails (centered, large name on two lines), no "Portfolio" label, text "Full-Stack Developer"
 - [x] Section order: Hero, About, Experience, Case study, Skills, Projects, Education, Contact. Rename Work to Projects (id "projects"), split Education and Training into its own compact section, renumber labels. Navbar in the same order including Case Study. Remove the Resume button from the navbar.
 - [x] Navbar fixes: close mobile menu on outside click, update the URL hash with history.replaceState as the active section changes
-- [ ] Contact email button: text "Send an email", address shown as plain text next to it
+- [x] Contact email button: text "Send an email", address shown as plain text next to it
 Done when: link previews look clean and the navbar behaves correctly.
 
 ## Phase 7b: Polish (after launch)

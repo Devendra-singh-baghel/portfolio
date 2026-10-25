@@ -19,11 +19,16 @@ export function Contact() {
 
         <Card className="flex flex-col gap-8 p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-4">
-            <Button asChild className="h-10 px-5 text-sm sm:h-11 sm:px-6">
-              <a href="mailto:devendrabaghel0220@gmail.com">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <Button asChild className="h-10 px-5 text-sm sm:h-11 sm:px-6">
+                <a href="mailto:devendrabaghel0220@gmail.com">
+                  Send an email
+                </a>
+              </Button>
+              <span className="font-mono text-sm text-muted-foreground select-all break-all">
                 devendrabaghel0220@gmail.com
-              </a>
-            </Button>
+              </span>
+            </div>
             <Button
               asChild
               variant="secondary"
