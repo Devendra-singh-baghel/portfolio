@@ -40,16 +40,25 @@ Done when: all contact links and the resume download work on the live site.
 ## Phase 6: SEO, accessibility, performance, repo cleanup (P1)
 - [x] Metadata, Open Graph image, favicon, canonical, sitemap
 - [x] Keyboard navigation, focus, contrast, alt text
-- [ ] Images optimised, lazy loading, Lighthouse check
+- [x] Images optimised, lazy loading, Lighthouse check
 - [x] 404 page
 - [x] README for the repo
 Done when: no major Lighthouse red flags and keyboard-only navigation works.
 
-## Phase 7: Launch (P0)
-- [ ] Final review of links, typos, mobile
-- [ ] Re-check Dropty content for confidentiality
-- [ ] Remove `noindex`, check sitemap
-Done when: all links and contact actions are tested.
+## Phase 7a: Pre-launch fixes (P0)
+- [ ] Positioning text: "Full-Stack Developer" everywhere (metadata, About title, README, CONTENT.md). "Backend-focused" stays only inside the About paragraph. The Dropty job title stays "Backend Developer".
+- [ ] Learning line: About, Skills "Currently learning" and CONTENT.md say Next.js and TypeScript
+- [ ] OG image redesign: crop-safe for square thumbnails (centered, large name on two lines), no "Portfolio" label, text "Full-Stack Developer"
+- [ ] Section order: Hero, About, Experience, Case study, Skills, Projects, Education, Contact. Rename Work to Projects (id "projects"), split Education and Training into its own compact section, renumber labels. Navbar in the same order including Case Study. Remove the Resume button from the navbar.
+- [ ] Navbar fixes: close mobile menu on outside click, update the URL hash with history.replaceState as the active section changes
+- [ ] Contact email button: text "Send an email", address shown as plain text next to it
+Done when: link previews look clean and the navbar behaves correctly.
+
+## Phase 7b: Polish (after launch)
+- [ ] Hero: bigger photo, smaller headline, remove the tech-list sentence, two buttons (Explore Projects, Download Resume), GitHub and LinkedIn only in Contact and Footer
+- [ ] Project cards smaller (3 columns on large screens)
+- [ ] Navbar brand bigger, logo-like
+- [ ] Skills marquee with logos (with Phase 8, Motion off support)
 
 ## Phase 8: Motion and animations (P1, after launch)
 - [ ] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
