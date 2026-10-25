@@ -36,7 +36,7 @@ export function Hero() {
 
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <Button asChild className="h-10 px-5 text-sm sm:h-11 sm:px-6">
-            <a href="#work">Explore Projects</a>
+            <a href="#projects">Explore Projects</a>
           </Button>
           <Button
             asChild

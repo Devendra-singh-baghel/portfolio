@@ -12,7 +12,7 @@ export function CaseStudyPreview() {
       className="scroll-mt-24 py-16 sm:py-24 lg:py-32"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
-        <SectionHeader label="02 / CASE STUDY" title="Featured Case Study" />
+        <SectionHeader label="03 / CASE STUDY" title="Featured Case Study" />
 
         <Card className="flex flex-col gap-6 p-6 sm:p-8">
           <div className="flex flex-col gap-3">

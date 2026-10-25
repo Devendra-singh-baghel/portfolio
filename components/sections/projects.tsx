@@ -9,12 +9,12 @@ import { projects } from "@/data/projects";
 export function Projects() {
   return (
     <section
-      id="work"
-      aria-label="Selected Work"
+      id="projects"
+      aria-label="Projects"
       className="scroll-mt-24 py-16 sm:py-24 lg:py-32"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
-        <SectionHeader label="03 / SELECTED WORK" title="Selected Work" />
+        <SectionHeader label="05 / PROJECTS" title="Projects" />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {projects.map((project) => (

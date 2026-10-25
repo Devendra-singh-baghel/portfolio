@@ -13,7 +13,7 @@ export function Contact() {
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          label="06 / CONTACT"
+          label="07 / CONTACT"
           title="Let's build something reliable."
         />
 
