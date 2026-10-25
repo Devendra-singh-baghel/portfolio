@@ -46,8 +46,8 @@ Done when: all contact links and the resume download work on the live site.
 Done when: no major Lighthouse red flags and keyboard-only navigation works.
 
 ## Phase 7a: Pre-launch fixes (P0)
-- [ ] Positioning text: "Full-Stack Developer" everywhere (metadata, About title, README, CONTENT.md). "Backend-focused" stays only inside the About paragraph. The Dropty job title stays "Backend Developer".
-- [ ] Learning line: About, Skills "Currently learning" and CONTENT.md say Next.js and TypeScript
+- [x] Positioning text: "Full-Stack Developer" everywhere (metadata, About title, README, CONTENT.md). "Backend-focused" stays only inside the About paragraph. The Dropty job title stays "Backend Developer".
+- [x] Learning line: About, Skills "Currently learning" and CONTENT.md say Next.js and TypeScript
 - [ ] OG image redesign: crop-safe for square thumbnails (centered, large name on two lines), no "Portfolio" label, text "Full-Stack Developer"
 - [ ] Section order: Hero, About, Experience, Case study, Skills, Projects, Education, Contact. Rename Work to Projects (id "projects"), split Education and Training into its own compact section, renumber labels. Navbar in the same order including Case Study. Remove the Resume button from the navbar.
 - [ ] Navbar fixes: close mobile menu on outside click, update the URL hash with history.replaceState as the active section changes

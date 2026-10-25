@@ -26,18 +26,18 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Devendra Singh Baghel | Backend-focused Full-Stack Developer",
+    default: "Devendra Singh Baghel | Full-Stack Developer",
     template: "%s | Devendra Singh Baghel",
   },
   description:
-    "Backend-focused full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
+    "Full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Devendra Singh Baghel | Backend-focused Full-Stack Developer",
+    title: "Devendra Singh Baghel | Full-Stack Developer",
     description:
-      "Backend-focused full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
+      "Full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
     url: SITE_URL,
     siteName: "Devendra Singh Baghel",
     locale: "en_US",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devendra Singh Baghel | Backend-focused Full-Stack Developer",
+    title: "Devendra Singh Baghel | Full-Stack Developer",
     description:
-      "Backend-focused full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
+      "Full-stack developer building reliable APIs and web applications with Node.js, Express, PostgreSQL and React.",
   },
   robots: {
     index: false,

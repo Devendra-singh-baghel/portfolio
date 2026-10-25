@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio of Devendra Singh Baghel, backend-focused full-stack developer.
+Personal portfolio of Devendra Singh Baghel, full-stack developer.
 
 Live: https://devendrabaghel.vercel.app
 

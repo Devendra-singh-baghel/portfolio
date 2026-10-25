@@ -4,7 +4,7 @@ Source of truth: Devendra's resume. Use this copy as written. If something is mi
 
 ## Identity
 - Name: Devendra Singh Baghel
-- Positioning: Backend-focused Full-Stack Developer
+- Positioning: Full-Stack Developer
 
 ## Hero
 - Headline: I build reliable APIs and practical web applications.
@@ -12,7 +12,7 @@ Source of truth: Devendra's resume. Use this copy as written. If something is mi
 - Buttons: Explore Projects, Contact Me
 
 ## About (DRAFT, Devendra to edit)
-I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. I also build React front ends, and I am currently learning Python, FastAPI and AI agent architecture.I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. Outside work, I build full-stack projects with React and the MERN stack, and I am currently learning Python, FastAPI and AI agent architecture.
+I am a full-stack developer who works mostly on the backend. At Dropty I build Node.js, Express and PostgreSQL services for a live baggage handling and logistics platform for airline passengers. Outside work, I build full-stack projects with React and the MERN stack, and I am currently learning Next.js and TypeScript.
 
 ## Case studies (written in Phase 4, only what the resume supports)
 1. AI document extraction with Google Gemini Vision for automated form processing across multiple airline partners: 90%+ field accuracy, 80% less manual form-filling time. Be ready to explain how this was measured.
@@ -52,7 +52,7 @@ Do not name airline partners or expose internal details.
 - Frontend: HTML5, CSS3, JavaScript (ES6+), React, Redux Toolkit, React Router, React Hook Form, Tailwind CSS
 - Backend: Node.js, Express.js, REST API design, PostgreSQL, Sequelize ORM, MongoDB, Mongoose, JWT authentication, Bcrypt
 - Tools and platforms: Git, GitHub, Cloudinary, Vite, Vercel, VS Code, Claude, Antigravity
-- Currently learning: Python, FastAPI, AI agent architecture, Next.js
+- Currently learning: Next.js, TypeScript
 
 ## Education and training
 - Master of Computer Application, Awadhesh Pratap Singh University, Rewa. CGPA 8.2

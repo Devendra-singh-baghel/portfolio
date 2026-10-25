@@ -46,11 +46,6 @@ export const skillGroups: readonly SkillGroup[] = [
   },
   {
     name: "Currently learning",
-    skills: [
-      "Python",
-      "FastAPI",
-      "AI agent architecture",
-      "Next.js",
-    ],
+    skills: ["Next.js", "TypeScript"],
   },
 ] as const;
