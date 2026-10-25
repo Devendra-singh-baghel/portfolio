@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <main
       id="main-content"
-      className="flex flex-1 items-center justify-center py-24 sm:py-32"
+      className="flex flex-1 items-center justify-center pt-28 pb-20 sm:pt-36 sm:pb-28"
     >
       <div className="mx-auto flex max-w-xl flex-col items-start gap-8 px-4 sm:px-6 lg:px-8">
         <SectionHeader

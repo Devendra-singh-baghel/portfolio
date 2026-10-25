@@ -84,7 +84,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   return (
     <main
       id="main-content"
-      className="mx-auto flex w-full max-w-4xl flex-col px-4 py-12 sm:px-6 sm:py-16 lg:px-8"
+      className="mx-auto flex w-full max-w-4xl flex-col px-4 pt-28 pb-12 sm:px-6 sm:pt-36 sm:pb-16 lg:px-8"
     >
       <div className="mb-8">
         <TextLink

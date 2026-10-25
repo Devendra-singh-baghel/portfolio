@@ -3,16 +3,20 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
+const DESKTOP_NAV_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Experience", href: "/#experience" },
   { label: "Case Study", href: "/#case-study" },
   { label: "Skills", href: "/#skills" },
   { label: "Projects", href: "/#projects" },
   { label: "Education", href: "/#education" },
+];
+
+const MOBILE_NAV_LINKS = [
+  ...DESKTOP_NAV_LINKS,
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -127,6 +131,8 @@ export function Navbar() {
     }
   }, [activeSection, isHome]);
 
+  const isContactActive = isHome && activeSection === "contact";
+
   return (
     <>
       {/* Skip to main content link for keyboard accessibility */}
@@ -139,12 +145,13 @@ export function Navbar() {
 
       <header
         ref={headerRef}
-        className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md"
+        className="fixed top-4 inset-x-0 z-40 mx-auto w-[calc(100%-2rem)] max-w-5xl"
       >
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Floating pill navigation bar */}
+        <div className="flex items-center justify-between rounded-full border border-border bg-background/60 px-4 py-2.5 shadow-lg shadow-black/20 backdrop-blur-xl sm:px-6">
           <Link
             href="/"
-            className="rounded-sm font-mono text-sm font-medium tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="rounded-full font-serif text-base tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-lg"
           >
             Devendra Singh Baghel
           </Link>
@@ -152,9 +159,9 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav
             aria-label="Main Navigation"
-            className="hidden items-center gap-1 md:flex lg:gap-3 xl:gap-5"
+            className="hidden items-center gap-1 lg:flex xl:gap-2"
           >
-            {NAV_LINKS.map((link) => {
+            {DESKTOP_NAV_LINKS.map((link) => {
               const sectionId = link.href.replace("/#", "");
               const isActive = isHome && activeSection === sectionId;
               return (
@@ -163,9 +170,9 @@ export function Navbar() {
                   href={link.href}
                   aria-current={isActive ? "location" : undefined}
                   className={cn(
-                    "group flex items-center gap-1 rounded-sm px-1.5 py-1 text-xs whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:px-2 lg:text-sm",
+                    "group flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background xl:px-3 xl:text-sm",
                     isActive
-                      ? "font-medium text-foreground"
+                      ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -181,31 +188,51 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Mobile Menu Toggle Button */}
-          <button
-            ref={menuButtonRef}
-            type="button"
-            onClick={() => setIsOpen((prev) => !prev)}
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={isOpen}
-            aria-controls="mobile-navigation"
-            className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
-          >
-            {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          {/* Right side: Contact CTA on desktop, Menu toggle on mobile */}
+          <div className="flex items-center gap-2">
+            <Link
+              href="/#contact"
+              aria-current={isContactActive ? "location" : undefined}
+              className={cn(
+                "hidden items-center gap-1 rounded-full bg-primary px-3.5 py-1.5 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:inline-flex xl:px-4 xl:text-sm",
+                isContactActive &&
+                  "ring-2 ring-primary ring-offset-2 ring-offset-background"
+              )}
+            >
+              <span>Contact</span>
+              <ArrowUpRight className="size-3.5 xl:size-4" aria-hidden="true" />
+            </Link>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+              ref={menuButtonRef}
+              type="button"
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label={
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+              }
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+            >
+              <span>{isOpen ? "Close" : "Menu"}</span>
+              {isOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu Panel */}
         {isOpen && (
           <nav
             id="mobile-navigation"
             aria-label="Mobile Navigation"
-            className="border-t border-border bg-background/95 px-4 py-4 backdrop-blur-md md:hidden"
+            className="mt-2 w-full rounded-2xl border border-border bg-background/95 p-3 shadow-xl shadow-black/40 backdrop-blur-xl lg:hidden"
           >
-            <div className="flex flex-col gap-2">
-              {NAV_LINKS.map((link) => {
+            <div className="flex flex-col gap-1">
+              {MOBILE_NAV_LINKS.map((link) => {
                 const sectionId = link.href.replace("/#", "");
                 const isActive = isHome && activeSection === sectionId;
+                const isContact = sectionId === "contact";
                 return (
                   <Link
                     key={link.href}
@@ -213,18 +240,28 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? "location" : undefined}
                     className={cn(
-                      "flex items-center justify-between rounded-md px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                      "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                       isActive
-                        ? "bg-muted font-medium text-foreground"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                        ? "bg-secondary font-medium text-foreground"
+                        : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
+                      isContact &&
+                        isActive &&
+                        "bg-primary font-medium text-primary-foreground hover:bg-primary/90",
+                      isContact &&
+                        !isActive &&
+                        "font-medium text-foreground hover:bg-secondary"
                     )}
                   >
                     <span>{link.label}</span>
-                    {isActive && (
-                      <span
-                        aria-hidden="true"
-                        className="size-1.5 rounded-full bg-primary"
-                      />
+                    {isContact ? (
+                      <ArrowUpRight className="size-4" aria-hidden="true" />
+                    ) : (
+                      isActive && (
+                        <span
+                          aria-hidden="true"
+                          className="size-1.5 rounded-full bg-primary"
+                        />
+                      )
                     )}
                   </Link>
                 );
