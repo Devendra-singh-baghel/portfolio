@@ -4,14 +4,15 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Work", href: "/#work" },
   { label: "About", href: "/#about" },
-  { label: "Skills", href: "/#skills" },
   { label: "Experience", href: "/#experience" },
+  { label: "Case Study", href: "/#case-study" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Education", href: "/#education" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -21,8 +22,10 @@ export function Navbar() {
 
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState<string>("");
+  const headerRef = React.useRef<HTMLElement>(null);
   const menuButtonRef = React.useRef<HTMLButtonElement>(null);
 
+  // Close mobile menu on Escape key press and return focus to hamburger button
   React.useEffect(() => {
     if (!isOpen) {
       return;
@@ -39,12 +42,37 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
+  // Close mobile menu on outside click/pointerdown
+  React.useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handlePointerDown = (e: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [isOpen]);
+
+  // Scroll spy to detect active section
   React.useEffect(() => {
     if (!isHome) {
       return;
     }
 
-    const sectionIds = ["work", "about", "skills", "experience", "contact"];
+    const sectionIds = [
+      "about",
+      "experience",
+      "case-study",
+      "skills",
+      "projects",
+      "education",
+      "contact",
+    ];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 140;
@@ -70,6 +98,26 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
+  // Update URL hash with history.replaceState as active section changes
+  React.useEffect(() => {
+    if (!isHome) {
+      return;
+    }
+
+    if (activeSection) {
+      const newHash = `#${activeSection}`;
+      if (window.location.hash !== newHash) {
+        window.history.replaceState(null, "", newHash);
+      }
+    } else if (window.scrollY < 200 && window.location.hash) {
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+  }, [activeSection, isHome]);
+
   return (
     <>
       {/* Skip to main content link for keyboard accessibility */}
@@ -80,7 +128,10 @@ export function Navbar() {
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
+      <header
+        ref={headerRef}
+        className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md"
+      >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
@@ -92,7 +143,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav
             aria-label="Main Navigation"
-            className="hidden items-center gap-3 md:flex lg:gap-5"
+            className="hidden items-center gap-1 md:flex lg:gap-3 xl:gap-5"
           >
             {NAV_LINKS.map((link) => {
               const sectionId = link.href.replace("/#", "");
@@ -103,7 +154,7 @@ export function Navbar() {
                   href={link.href}
                   aria-current={isActive ? "location" : undefined}
                   className={cn(
-                    "group flex items-center gap-1.5 rounded-sm px-1.5 py-1 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                    "group flex items-center gap-1 rounded-sm px-1.5 py-1 text-xs whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:px-2 lg:text-sm",
                     isActive
                       ? "font-medium text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -119,14 +170,6 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <Button asChild variant="secondary" size="sm" className="ml-1">
-              <a
-                href="/Devendra-Singh-Baghel-Resume.pdf"
-                download="Devendra-Singh-Baghel-Resume.pdf"
-              >
-                Resume
-              </a>
-            </Button>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -177,17 +220,6 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-2">
-                <Button asChild variant="secondary" size="sm" className="w-full">
-                  <a
-                    href="/Devendra-Singh-Baghel-Resume.pdf"
-                    download="Devendra-Singh-Baghel-Resume.pdf"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Resume
-                  </a>
-                </Button>
-              </div>
             </div>
           </nav>
         )}
