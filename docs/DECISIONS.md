@@ -25,3 +25,4 @@ Append-only. Format: Decision. Why. Rejected.
 - Floating pill navbar with contact CTA. Why: modern floating pill layout, keeps main navigation compact and clear, contact as primary action. Rejected: full-width sticky bar.
 - Full-screen centered cutout hero. Why: striking editorial look with cutout portrait, smooth CSS mask blending and silhouette rim light without animation overhead. Rejected: split two-column hero.
 - Name displayed as "Devendra Singh" visually in hero with "Baghel" in sr-only. Why: guarantees large single-line typography on all viewports down to 360px without wrapping, while preserving full name in accessibility tree and SEO. Rejected: multi-line wrapped heading.
+- OG image v2 uses a pre-processed black-and-white portrait (satori has no filter/mask support); script scripts/make-og-portrait.mjs regenerates it.

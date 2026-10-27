@@ -63,6 +63,7 @@ Done when: all links and contact actions are tested.
 ## Phase 7b: Polish (after launch)
 - [x] Hero: bigger photo, smaller headline, remove the tech-list sentence, two buttons (Explore Projects, Download Resume), GitHub and LinkedIn only in Contact and Footer
 - [x] Project cards smaller (3 columns on large screens)
+- [x] OG image v2: portrait and name, crop-safe for WhatsApp
 - [ ] Navbar brand bigger, logo-like
 
 ## Phase 8: Motion and animations (P1, after launch)
