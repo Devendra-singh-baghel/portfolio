@@ -94,7 +94,7 @@ export function Hero() {
               <span className="sr-only"> Baghel</span>
             </h1>
 
-            <p className="max-w-[32rem] text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
+            <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
               I build reliable APIs and practical web applications.
             </p>
           </div>
