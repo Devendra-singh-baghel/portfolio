@@ -64,7 +64,6 @@ Done when: all links and contact actions are tested.
 - [x] Hero: bigger photo, smaller headline, remove the tech-list sentence, two buttons (Explore Projects, Download Resume), GitHub and LinkedIn only in Contact and Footer
 - [x] Project cards smaller (3 columns on large screens)
 - [x] OG image v2: portrait and name, crop-safe for WhatsApp
-- [ ] Navbar brand bigger, logo-like
 
 ## Phase 8: Motion and animations (P1, after launch)
 - [x] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
@@ -72,8 +71,4 @@ Done when: all links and contact actions are tested.
 - [ ] 8b polish (hero entrance, scroll reveals, hover/focus, navbar transitions)
 - [ ] 8c icons, logos and marquee
 - [ ] 8d hero dust dissolve (desktop and mobile, adaptive)
-- [ ] Hero entrance, scroll reveals, card hover and focus states, navbar transitions
-- [ ] Hero scroll dissolve (dust/particle) effect, desktop only, opt-in on mobile, respects Motion off and prefers-reduced-motion
-- [ ] "Motion off" toggle + prefers-reduced-motion
-Done when: the site reads fully with motion off.
 - [ ] Icons and logos in one pass: BrandIcon component (simple-icons for brand logos, inline SVG for LinkedIn, lucide for UI icons); add to Contact buttons, Footer, project links, and Skills logos; then the Skills marquee (Motion off support)
