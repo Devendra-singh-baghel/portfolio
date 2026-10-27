@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portrait from "@/public/images/profile2.png";
+import portrait from "@/public/images/profile.png";
 
 const PORTRAIT_DIM = 0.25;
 const OVERLAP_RATIO = 0.38;
