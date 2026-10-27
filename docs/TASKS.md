@@ -67,7 +67,11 @@ Done when: all links and contact actions are tested.
 - [ ] Navbar brand bigger, logo-like
 
 ## Phase 8: Motion and animations (P1, after launch)
-- [ ] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
+- [x] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
+- [x] 8a foundation (Motion provider, reduced motion)
+- [ ] 8b polish (hero entrance, scroll reveals, hover/focus, navbar transitions)
+- [ ] 8c icons, logos and marquee
+- [ ] 8d hero dust dissolve (desktop and mobile, adaptive)
 - [ ] Hero entrance, scroll reveals, card hover and focus states, navbar transitions
 - [ ] Hero scroll dissolve (dust/particle) effect, desktop only, opt-in on mobile, respects Motion off and prefers-reduced-motion
 - [ ] "Motion off" toggle + prefers-reduced-motion

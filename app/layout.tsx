@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Manrope, IBM_Plex_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MotionProvider } from "@/components/motion-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SITE_URL } from "@/lib/site";
@@ -72,9 +73,11 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <MotionProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>
