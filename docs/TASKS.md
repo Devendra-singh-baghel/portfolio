@@ -64,8 +64,6 @@ Done when: all links and contact actions are tested.
 - [x] Hero: bigger photo, smaller headline, remove the tech-list sentence, two buttons (Explore Projects, Download Resume), GitHub and LinkedIn only in Contact and Footer
 - [x] Project cards smaller (3 columns on large screens)
 - [ ] Navbar brand bigger, logo-like
-- [ ] Icons: add logos/icons to footer links, contact buttons, hero links and project links (inline SVG for GitHub, LinkedIn, mail, download); tech logos for Skills (simple-icons) together with the Phase 8 marquee
-- [ ] Skills marquee with logos (with Phase 8, Motion off support)
 
 ## Phase 8: Motion and animations (P1, after launch)
 - [ ] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
@@ -73,3 +71,4 @@ Done when: all links and contact actions are tested.
 - [ ] Hero scroll dissolve (dust/particle) effect, desktop only, opt-in on mobile, respects Motion off and prefers-reduced-motion
 - [ ] "Motion off" toggle + prefers-reduced-motion
 Done when: the site reads fully with motion off.
+- [ ] Icons and logos in one pass: BrandIcon component (simple-icons for brand logos, inline SVG for LinkedIn, lucide for UI icons); add to Contact buttons, Footer, project links, and Skills logos; then the Skills marquee (Motion off support)
