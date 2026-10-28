@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { AnimatePresence, m } from "motion/react";
 import { cn } from "@/lib/utils";
 
 const DESKTOP_NAV_LINKS = [
@@ -148,7 +149,7 @@ export function Navbar() {
         className="fixed top-4 inset-x-0 z-40 mx-auto w-[calc(100%-2rem)] max-w-5xl"
       >
         {/* Floating pill navigation bar */}
-        <div className="flex items-center justify-between rounded-full border border-border bg-background/60 px-4 py-2.5 shadow-lg shadow-black/20 backdrop-blur-xl sm:px-6">
+        <div className="nav-drop-in flex items-center justify-between rounded-full border border-border bg-background/60 px-4 py-2.5 shadow-lg shadow-black/20 backdrop-blur-xl sm:px-6">
           <Link
             href="/"
             className="rounded-full font-serif text-base tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-lg"
@@ -222,53 +223,60 @@ export function Navbar() {
         </div>
 
         {/* Mobile Dropdown Menu Panel */}
-        {isOpen && (
-          <nav
-            id="mobile-navigation"
-            aria-label="Mobile Navigation"
-            className="mt-2 w-full rounded-2xl border border-border bg-background/95 p-3 shadow-xl shadow-black/40 backdrop-blur-xl lg:hidden"
-          >
-            <div className="flex flex-col gap-1">
-              {MOBILE_NAV_LINKS.map((link) => {
-                const sectionId = link.href.replace("/#", "");
-                const isActive = isHome && activeSection === sectionId;
-                const isContact = sectionId === "contact";
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    aria-current={isActive ? "location" : undefined}
-                    className={cn(
-                      "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                      isActive
-                        ? "bg-secondary font-medium text-foreground"
-                        : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
-                      isContact &&
-                        isActive &&
-                        "bg-primary font-medium text-primary-foreground hover:bg-primary/90",
-                      isContact &&
-                        !isActive &&
-                        "font-medium text-foreground hover:bg-secondary"
-                    )}
-                  >
-                    <span>{link.label}</span>
-                    {isContact ? (
-                      <ArrowUpRight className="size-4" aria-hidden="true" />
-                    ) : (
-                      isActive && (
-                        <span
-                          aria-hidden="true"
-                          className="size-1.5 rounded-full bg-primary"
-                        />
-                      )
-                    )}
-                  </Link>
-                );
-              })}
-            </div>
-          </nav>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <m.nav
+              key="mobile-nav"
+              id="mobile-navigation"
+              aria-label="Mobile Navigation"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="mt-2 w-full rounded-2xl border border-border bg-background/95 p-3 shadow-xl shadow-black/40 backdrop-blur-xl lg:hidden"
+            >
+              <div className="flex flex-col gap-1">
+                {MOBILE_NAV_LINKS.map((link) => {
+                  const sectionId = link.href.replace("/#", "");
+                  const isActive = isHome && activeSection === sectionId;
+                  const isContact = sectionId === "contact";
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      aria-current={isActive ? "location" : undefined}
+                      className={cn(
+                        "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                        isActive
+                          ? "bg-secondary font-medium text-foreground"
+                          : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
+                        isContact &&
+                          isActive &&
+                          "bg-primary font-medium text-primary-foreground hover:bg-primary/90",
+                        isContact &&
+                          !isActive &&
+                          "font-medium text-foreground hover:bg-secondary"
+                      )}
+                    >
+                      <span>{link.label}</span>
+                      {isContact ? (
+                        <ArrowUpRight className="size-4" aria-hidden="true" />
+                      ) : (
+                        isActive && (
+                          <span
+                            aria-hidden="true"
+                            className="size-1.5 rounded-full bg-primary"
+                          />
+                        )
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </m.nav>
+          )}
+        </AnimatePresence>
       </header>
     </>
   );

@@ -31,7 +31,7 @@ export function Hero() {
           never inside it, so the drop-shadow is built only from the cutout's alpha.
         */}
         <div
-          className="pointer-events-none relative mx-auto"
+          className="hero-portrait-in pointer-events-none relative mx-auto"
           style={{ width: "var(--portrait-w)", height: "var(--portrait-h)" }}
         >
           {/* Shadow wrapper: ONLY the masked image lives here */}
@@ -85,21 +85,33 @@ export function Hero() {
           style={{ marginTop: "var(--text-overlap)" }}
         >
           <div className="flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground sm:text-sm">
+            <p
+              className="hero-in font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground sm:text-sm"
+              style={{ "--hero-delay": "0s" } as React.CSSProperties}
+            >
               FULL-STACK DEVELOPER
             </p>
 
-            <h1 className="font-serif text-[clamp(2.125rem,8.5vw,7.5rem)] font-normal leading-[0.95] tracking-tight text-foreground whitespace-nowrap">
+            <h1
+              className="hero-in font-serif text-[clamp(2.125rem,8.5vw,7.5rem)] font-normal leading-[0.95] tracking-tight text-foreground whitespace-nowrap"
+              style={{ "--hero-delay": "0.1s" } as React.CSSProperties}
+            >
               Devendra Singh
               <span className="sr-only"> Baghel</span>
             </h1>
 
-            <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
+            <p
+              className="hero-in max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg"
+              style={{ "--hero-delay": "0.2s" } as React.CSSProperties}
+            >
               I build reliable APIs and practical web applications.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-6 sm:pt-8">
+          <div
+            className="hero-in flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-6 sm:pt-8"
+            style={{ "--hero-delay": "0.3s" } as React.CSSProperties}
+          >
             <Button
               asChild
               className="h-11 rounded-full px-4 sm:px-6 text-sm font-medium"

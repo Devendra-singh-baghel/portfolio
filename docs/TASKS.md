@@ -68,7 +68,7 @@ Done when: all links and contact actions are tested.
 ## Phase 8: Motion and animations (P1, after launch)
 - [x] Choose one animation library (Motion or GSAP, not both) and log it in docs/DECISIONS.md
 - [x] 8a foundation (Motion provider, reduced motion)
-- [ ] 8b polish (hero entrance, scroll reveals, hover/focus, navbar transitions)
+- [x] 8b polish (hero entrance, scroll reveals, hover/focus, navbar transitions)
 - [ ] 8c icons, logos and marquee
 - [ ] 8d hero dust dissolve (desktop and mobile, adaptive)
 - [ ] Icons and logos in one pass: BrandIcon component (simple-icons for brand logos, inline SVG for LinkedIn, lucide for UI icons); add to Contact buttons, Footer, project links, and Skills logos; then the Skills marquee (Motion off support)
