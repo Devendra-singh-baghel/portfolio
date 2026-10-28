@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TypingEyebrow } from "@/components/typing-eyebrow";
 import portrait from "@/public/images/profile.png";
 
 const PORTRAIT_DIM = 0.25;
@@ -86,10 +87,16 @@ export function Hero() {
         >
           <div className="flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
             <p
-              className="hero-in font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground sm:text-sm"
-              style={{ "--hero-delay": "0s" } as React.CSSProperties}
+              className="hero-in font-mono text-[13px] font-medium uppercase tracking-[0.25em] text-foreground/85 sm:text-sm"
+              style={
+                {
+                  "--hero-delay": "0s",
+                  textShadow:
+                    "0 1px 12px rgba(0, 0, 0, 0.85), 0 0 4px rgba(0, 0, 0, 0.5)",
+                } as React.CSSProperties
+              }
             >
-              FULL-STACK DEVELOPER
+              <TypingEyebrow />
             </p>
 
             <h1

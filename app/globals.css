@@ -161,6 +161,15 @@
   }
 }
 
+@keyframes caret-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-in {
     animation: hero-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
@@ -174,6 +183,10 @@
 
   .nav-drop-in {
     animation: nav-drop-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+
+  .typing-caret {
+    animation: caret-blink 0.9s steps(1) infinite;
   }
 }
 

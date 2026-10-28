@@ -27,8 +27,11 @@ export function Navbar() {
 
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState<string>("");
+  const [isVisible, setIsVisible] = React.useState(true);
+  const [isFocusInside, setIsFocusInside] = React.useState(false);
   const headerRef = React.useRef<HTMLElement>(null);
   const menuButtonRef = React.useRef<HTMLButtonElement>(null);
+  const lastScrollYRef = React.useRef(0);
 
   // Close mobile menu on Escape key press and return focus to hamburger button
   React.useEffect(() => {
@@ -63,12 +66,8 @@ export function Navbar() {
     return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, [isOpen]);
 
-  // Scroll spy to detect active section
+  // Scroll spy to detect active section & hide-on-scroll logic
   React.useEffect(() => {
-    if (!isHome) {
-      return;
-    }
-
     const sectionIds = [
       "about",
       "experience",
@@ -80,6 +79,27 @@ export function Navbar() {
     ];
 
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      // 1. Hide on scroll down, show on scroll up
+      if (currentScrollY < 80) {
+        setIsVisible(true);
+      } else if (currentScrollY <= maxScroll) {
+        const diff = currentScrollY - lastScrollYRef.current;
+        if (Math.abs(diff) >= 6) {
+          setIsVisible(diff < 0);
+        }
+      }
+
+      lastScrollYRef.current = Math.max(0, currentScrollY);
+
+      // 2. Active section detection (home page only)
+      if (!isHome) {
+        return;
+      }
+
       // If at the bottom of the page, activate the last section ("contact")
       if (
         window.innerHeight + window.scrollY >=
@@ -133,6 +153,7 @@ export function Navbar() {
   }, [activeSection, isHome]);
 
   const isContactActive = isHome && activeSection === "contact";
+  const showNav = isVisible || isOpen || isFocusInside;
 
   return (
     <>
@@ -146,7 +167,16 @@ export function Navbar() {
 
       <header
         ref={headerRef}
-        className="fixed top-4 inset-x-0 z-40 mx-auto w-[calc(100%-2rem)] max-w-5xl"
+        onFocus={() => setIsFocusInside(true)}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+            setIsFocusInside(false);
+          }
+        }}
+        className={cn(
+          "fixed top-4 inset-x-0 z-40 mx-auto w-[calc(100%-2rem)] max-w-5xl transition-transform duration-300 ease-out motion-reduce:transition-none",
+          showNav ? "translate-y-0" : "-translate-y-[calc(100%+2rem)]"
+        )}
       >
         {/* Floating pill navigation bar */}
         <div className="nav-drop-in flex items-center justify-between rounded-full border border-border bg-background/60 px-4 py-2.5 shadow-lg shadow-black/20 backdrop-blur-xl sm:px-6">
