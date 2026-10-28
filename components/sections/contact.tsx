@@ -1,8 +1,11 @@
-import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
+import { siGithub } from "simple-icons";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
+import { BrandIcon } from "@/components/brand-icon";
+import { LinkedInIcon } from "@/components/linkedin-icon";
 
 export function Contact() {
   return (
@@ -40,8 +43,8 @@ export function Contact() {
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
                 >
+                  <BrandIcon icon={siGithub} className="size-4" />
                   GitHub
-                  <ArrowUpRight className="size-4" aria-hidden="true" />
                 </a>
               </Button>
 
@@ -56,8 +59,8 @@ export function Contact() {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
                 >
+                  <LinkedInIcon className="size-4" />
                   LinkedIn
-                  <ArrowUpRight className="size-4" aria-hidden="true" />
                 </a>
               </Button>
 

@@ -1,4 +1,8 @@
+import { Download, Mail } from "lucide-react";
+import { siGithub } from "simple-icons";
 import { TextLink } from "@/components/ui/text-link";
+import { BrandIcon } from "@/components/brand-icon";
+import { LinkedInIcon } from "@/components/linkedin-icon";
 
 export function Footer() {
   return (
@@ -16,18 +20,21 @@ export function Footer() {
             href="mailto:devendrabaghel0220@gmail.com"
             className="text-muted-foreground hover:text-foreground"
           >
+            <Mail className="size-3.5" aria-hidden="true" />
             Email
           </TextLink>
           <TextLink
             href="https://github.com/Devendra-singh-baghel"
             className="text-muted-foreground hover:text-foreground"
           >
+            <BrandIcon icon={siGithub} className="size-3.5" />
             GitHub
           </TextLink>
           <TextLink
             href="https://www.linkedin.com/in/devendra-singh-baghel-267023351"
             className="text-muted-foreground hover:text-foreground"
           >
+            <LinkedInIcon className="size-3.5" />
             LinkedIn
           </TextLink>
           <a
@@ -35,6 +42,7 @@ export function Footer() {
             download="Devendra-Singh-Baghel-Resume.pdf"
             className="inline-flex items-center gap-1 rounded-sm text-muted-foreground underline underline-offset-4 decoration-border transition-colors hover:text-foreground hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
+            <Download className="size-3.5" aria-hidden="true" />
             Resume
           </a>
         </nav>

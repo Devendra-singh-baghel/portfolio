@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { siGithub } from "simple-icons";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Card } from "@/components/ui/card";
 import { Tag } from "@/components/ui/tag";
 import { TextLink } from "@/components/ui/text-link";
 import { Reveal } from "@/components/reveal";
+import { BrandIcon } from "@/components/brand-icon";
 import { projects } from "@/data/projects";
 
 export function Projects() {
@@ -75,16 +77,26 @@ export function Projects() {
 
                   {/* External Links */}
                   <div className="mt-auto flex flex-wrap items-center gap-4 border-t border-border/50 pt-3.5">
-                    {project.links.map((link) => (
-                      <TextLink
-                        key={link.url}
-                        href={link.url}
-                        aria-label={link.ariaLabel}
-                      >
-                        {link.label}
-                        <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                      </TextLink>
-                    ))}
+                    {project.links.map((link) => {
+                      const isGithub = link.url.includes("github.com");
+                      return (
+                        <TextLink
+                          key={link.url}
+                          href={link.url}
+                          aria-label={link.ariaLabel}
+                        >
+                          {link.label}
+                          {isGithub ? (
+                            <BrandIcon icon={siGithub} className="size-3.5" />
+                          ) : (
+                            <ArrowUpRight
+                              className="size-3.5"
+                              aria-hidden="true"
+                            />
+                          )}
+                        </TextLink>
+                      );
+                    })}
                   </div>
                 </div>
               </Card>

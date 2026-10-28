@@ -70,6 +70,6 @@ Done when: all links and contact actions are tested.
 - [x] 8a foundation (Motion provider, reduced motion)
 - [x] 8b polish (hero entrance, scroll reveals, hover/focus, navbar transitions)
 - [x] 8b+ typing eyebrow, hide-on-scroll navbar
-- [ ] 8c icons, logos and marquee
+- [x] 8c icons, logos and marquee
 - [ ] 8d hero dust dissolve (desktop and mobile, adaptive)
-- [ ] Icons and logos in one pass: BrandIcon component (simple-icons for brand logos, inline SVG for LinkedIn, lucide for UI icons); add to Contact buttons, Footer, project links, and Skills logos; then the Skills marquee (Motion off support)
+- [x] Icons and logos in one pass: BrandIcon component (simple-icons for brand logos, inline SVG for LinkedIn, lucide for UI icons); add to Contact buttons, Footer, project links, and Skills logos; then the Skills marquee (Motion off support)
