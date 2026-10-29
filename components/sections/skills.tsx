@@ -14,7 +14,9 @@ export function Skills() {
           <SectionHeader label="04 / SKILLS" title="Skills & Technologies" />
         </Reveal>
 
-        <SkillsMarquee />
+        <Reveal delay={0.1}>
+          <SkillsMarquee />
+        </Reveal>
       </div>
     </section>
   );
