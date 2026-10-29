@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypingEyebrow } from "@/components/typing-eyebrow";
+import { HeroDustLoader } from "@/components/hero-dust-loader";
 import portrait from "@/public/images/profile.png";
 
 const PORTRAIT_DIM = 0.25;
@@ -53,7 +54,7 @@ export function Hero() {
                 alt="Portrait of Devendra Singh Baghel"
                 priority
                 sizes="(max-width: 768px) 100vw, 60vw"
-                className="size-full object-contain object-bottom"
+                className="hero-portrait-image size-full object-contain object-bottom"
                 style={{
                   filter: "grayscale(1) contrast(1.1) brightness(0.88)",
                 }}
@@ -63,16 +64,19 @@ export function Hero() {
 
           {/* Tunable dimming overlay (outside the shadow wrapper) */}
           <div
-            className="pointer-events-none absolute inset-0 bg-background"
+            className="hero-portrait-dim pointer-events-none absolute inset-0 bg-background"
             style={{ opacity: PORTRAIT_DIM }}
             aria-hidden="true"
           />
 
           {/* Gentle bottom fade so the lower torso merges into the background behind the text */}
           <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-background via-background/60 to-transparent"
+            className="hero-portrait-fade pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-background via-background/60 to-transparent"
             aria-hidden="true"
           />
+
+          {/* Hero Dust Dissolve canvas layer */}
+          <HeroDustLoader />
         </div>
 
         {/*

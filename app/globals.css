@@ -283,3 +283,15 @@
     transform: none !important;
   }
 }
+
+[data-hero-dissolve="active"] .hero-portrait-image,
+[data-hero-dissolve="active"] .hero-portrait-dim,
+[data-hero-dissolve="active"] .hero-portrait-fade {
+  opacity: 0 !important;
+  transition: none !important;
+}
+
+[data-hero-dissolve="fallback"] .hero-portrait-in {
+  opacity: var(--fallback-opacity, 1);
+  transform: translateY(var(--fallback-y, 0px));
+}
